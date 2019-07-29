@@ -3,6 +3,7 @@ include 'inc/db.php';
 include 'inc/functions.php';
 include 'inc/head.php';
 if (isset($_GET['search'])) {
+  $title = $_GET['title'];
   $location = $_GET['location'];
   $type = $_GET['type'];
   $query = "SELECT * FROM jobs  WHERE title LIKE '%$title%' AND 
