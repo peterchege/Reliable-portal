@@ -1,19 +1,22 @@
-<!doctype html>
-<html lang="en">
+<?php
+include 'inc/db.php';
+include 'inc/functions.php';
+include 'inc/head.php';
+if (isset($_GET['search'])) {
+  $title = $_GET['title'];
+  echo '<h1>' . $title . '</h1>';
+  $location = $_GET['location'];
+  $type = $_GET['type'];
+  $query = "SELECT * FROM jobs  WHERE title LIKE '%$title%' OR 
+                                      `location` LIKE '%$location%' OR
+                                      `type` LIKE '%$type%' ";
+} else {
+  $query = "SELECT * FROM jobs";
+}
 
-<head>
-  <title>RELIABLE WEB PORTA</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="css/custom-bs.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="css/bootstrap-select.min.css">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="fonts/line-icons/style.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+
+$queryJobs = $db->query($query);
+?>
 
 <body id="top">
 
@@ -31,37 +34,10 @@
 
 
     <!-- NAVBAR -->
-    <header class="site-navbar mt-3">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.html">Reliable Portal</a></div>
-
-            <nav class="mx-auto site-navigation">
-              <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="job-listings.html">Hire Someone</a></li>
-                <li><a href="about.html">Create Account</a></li>
-                <li><a href="services.html">Login </a></li>
-                <li class="d-lg-none"><a href="contact.html">Contact Us</a></li>
-              </ul>
-            </nav>
-
-          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-            <div class="ml-auto">
-              <a href="contact.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span
-                  class="mr-2 icon-paper-plane"></span>Contact Us</a>
-            </div>
-            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
-                class="icon-menu h3 m-0 p-0 mt-2"></span></a>
-          </div>
-
-        </div>
-      </div>
-    </header>
+    <?php include 'inc/nav.php'; ?>
 
     <!-- HOME -->
-    <section class="home-section section-hero inner-page overlay bg-image" style="background-image: url('images/hero_1.jpg');"
-      id="home-section">
+    <section class="home-section section-hero inner-page overlay bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
@@ -77,7 +53,7 @@
 
     </section>
 
-    
+
 
     <section class="site-section">
       <div class="container">
@@ -90,23 +66,27 @@
 
 
         <div class="mb-5">
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.html"><img src="images/mech1.jpg" alt="Image" class="img-fluid"></a>
+          <?php while ($jobs = mysqli_fetch_assoc($queryJobs)) : ?>
+            <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
+              <div class="col-md-2">
+                <a href="job-single.php?job_id=<?= $jobs['id']; ?>"><img src="<?= $jobs['image'] ?>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-md-4">
+                <span class="badge badge-primary px-2 py-1 mb-3"><?= $jobs['type'];  ?></span>
+                <h2><a href="job-single.php?job_id=<?= $jobs['id']; ?>"><?= $jobs['title'] ?></a> </h2>
+                <p class="meta">Publisher: <strong><?= $jobs['publisher'] ?>
+                  </strong> <strong></strong>
+                </p>
+              </div>
+              <div class="col-md-3 text-left">
+                <h3>Nairobi</h3>
+                <span class="meta">Kenya</span>
+              </div>
+              <div class="col-md-3 text-md-right">
+                <strong class="text-black"> <?= money($jobs['salary']); ?></strong>
+              </div>
             </div>
-            <div class="col-md-4">
-              <span class="badge badge-primary px-2 py-1 mb-3">Freelancer</span>
-              <h2><a href="job-single.html">Mechanic</a> </h2>
-              <p class="meta">Publisher: <strong>Peter Chege</strong> Tag: <strong>Mechanic</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>Nairobi</h3>
-              <span class="meta">Kenya</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">Ksh 1,000 &mdash; Ksh 1,500</strong>
-            </div>
-          </div>
+          <?php endwhile; ?>
 
           <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
             <div class="col-md-2">
@@ -237,7 +217,7 @@
     </section>
 
 
-  
+
 
     <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
       <div class="container">
@@ -254,53 +234,7 @@
       </div>
     </section>
 
-    <footer class="site-footer">
-
-
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Search Trending</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">House Girl</a></li>
-              <li><a href="#">Plumbers</a></li>
-              <li><a href="#">Electricians</a></li>
-
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Company</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Create Account</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Support</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Contact Us</h3>
-            <div class="footer-social">
-              <a href="#"><span class="icon-facebook"></span></a>
-              <a href="#"><span class="icon-twitter"></span></a>
-              <a href="#"><span class="icon-instagram"></span></a>
-              <a href="#"><span class="icon-linkedin"></span></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="row text-center">
-          <div class="col-12">
-          </div>
-        </div>
-      </div>
-    </footer>
+    <?php include 'inc/footer.php'; ?>
 
   </div>
 
