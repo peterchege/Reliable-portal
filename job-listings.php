@@ -3,12 +3,10 @@ include 'inc/db.php';
 include 'inc/functions.php';
 include 'inc/head.php';
 if (isset($_GET['search'])) {
-  $title = $_GET['title'];
-  echo '<h1>' . $title . '</h1>';
   $location = $_GET['location'];
   $type = $_GET['type'];
-  $query = "SELECT * FROM jobs  WHERE title LIKE '%$title%' OR 
-                                      `location` LIKE '%$location%' OR
+  $query = "SELECT * FROM jobs  WHERE title LIKE '%$title%' AND 
+                                      `location` LIKE '%$location%' AND
                                       `type` LIKE '%$type%' ";
 } else {
   $query = "SELECT * FROM jobs";
