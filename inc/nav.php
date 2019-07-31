@@ -9,7 +9,7 @@
                     <li><a href="job-listings.php">Hire Someone</a></li>
                     <li><a href="create_account.php">Create Account</a></li>
                     <li><a href="services.php">Login </a></li>
-                    <li class="d-lg-none"><a href="contact.html">Contact Us</a></li>
+                    <li class="d-lg-none"><a href="contact.php">Contact Us</a></li>
                 </ul>
             </nav>
 

@@ -1,4 +1,34 @@
-<?php include 'inc/head.php'; ?>
+<?php
+include 'inc/db.php';
+include 'inc/functions.php';
+include 'inc/sessions.php';
+include 'inc/head.php';
+
+if (isset($_POST['register'])) {
+  $first_name = $_POST['first_name'];
+  $last_name = $_POST['last_name'];
+  $phone = $_POST['phone_number'];
+  $id_number = $_POST['id_number'];
+  $country = $_POST['country'];
+  $county = $_POST['county'];
+  $city = $_POST['city'];
+  $image = $_POST['image'];
+  $gender = $_POST['gender'];
+
+
+  if (empty($first_name) || empty($last_name) || empty($phone) || empty($country) || empty($county) || empty($city) || empty($image) || empty($gender)) {
+    $errors[] = 'All fields are required';
+  }
+
+  if (empty($errors)) {
+    $insert = $db->query("INSERT INTO freelancer (`first`,`last`,`phone`,`id_number`,`country`,`county`,`city`,`image`,`gender`) VALUES( '$first_name','$last_name','$phone','$id_number','$country','$county','$city','$image','$gender' ) ");
+    if ($insert) {
+      $_SESSION['successMessage'] = 'Your details have been captured successfully! Please enter your business pariculars.';
+      redirect_to('business.php');
+    }
+  }
+}
+?>
 
 <body id="top">
 
@@ -43,56 +73,60 @@
           </div>
           <div class="col-lg-6 ml-auto">
             <h2 class="section-title mb-3">CREATE AN ACCOUNT</h2><br>
-
+            <?php
+            if (!empty($errors)) {
+              echo display_errors($errors);
+            }
+            ?>
             <div class=" row form">
-              <form>
+              <form method="POST" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">First name</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="john">
+                    <input name="first_name" type="text" class="form-control" id="inputEmail4" placeholder="john">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Last name</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="doe">
+                    <input name="last_name" type="text" class="form-control" id="inputEmail4" placeholder="doe">
                   </div>
                   <br>
                   <div class="form-group col-md-6">
                     <label for="inputAddress">Phone number</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="07xx 924 xxx">
+                    <input name="phone_number" type="number" class="form-control" id="inputAddress" placeholder="07xx 924 xxx">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputAddress">Id Number</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="x234xxxx">
+                    <input name="id_number" type="nubmer" class="form-control" id="inputAddress" placeholder="x234xxxx">
                   </div>
                   <br>
                   <div class="form-group col-md-4">
                     <label for="inputPassword4">Country</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="country">
+                    <input name="country" type="text" class="form-control" id="inputPassword4" placeholder="country">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputPassword4">County</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="county">
+                    <input name="county" type="text" class="form-control" id="inputPassword4" placeholder="county">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputPassword4">City</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="city">
+                    <input name="city" type="text" class="form-control" id="inputPassword4" placeholder="city">
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="exampleFormControlFile1">Image</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <input name="image" type="file" class="form-control-file" id="exampleFormControlFile1">
                   </div>
                   <div class="form-group  col-md-3">
                     <label for="inputAddress2">Gender</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>Male</option>
-                      <option>Female</option>
+                    <select name="gender" class="form-control" id="exampleFormControlSelect1">
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
                     </select>
                   </div>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary btn-mine">Sign in</button>
+                <button type="submit" name="register" class="btn btn-primary btn-mine">Sign in</button>
               </form>
             </div>
           </div>
