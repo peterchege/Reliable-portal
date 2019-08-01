@@ -5,7 +5,9 @@ include 'inc/head.php';
 if (isset($_GET['job_id'])) {
   $job_id = $_GET['job_id'];
 
-  $query = "SELECT * FROM jobs WHERE id = '$job_id'";
+  $query = "SELECT * 
+              FROM  freelancer INNER JOIN business_profile
+              ON  freelancer.freelancer_id =  business_profile.freelancer_id WHERE freelancer.freelancer_id = '$job_id'";
   $getJobDetails = $db->query($query);
   $loopJobDetails = mysqli_fetch_assoc($getJobDetails);
 }
@@ -34,7 +36,7 @@ if (isset($_GET['job_id'])) {
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <h1 class="text-white font-weight-bold"><?= $loopJobDetails['title']; ?></h1>
+            <h1 class="text-white font-weight-bold"><?= $loopJobDetails['job_category']; ?></h1>
           </div>
         </div>
       </div>
@@ -50,11 +52,11 @@ if (isset($_GET['job_id'])) {
                 <img src="images/featured-listing-1.jpg" alt="Free Website Template By Free-Template.co">
               </div>
               <div>
-                <h2><?= $loopJobDetails['title']; ?></h2>
+                <h2><?= $loopJobDetails['job_category']; ?></h2>
                 <div>
                   <span class="ml-0 mr-2 mb-2"><span class="icon-briefcase mr-2"></span>Puma</span>
-                  <span class="m-2"><span class="icon-room mr-2"></span><?= $loopJobDetails['location']; ?></span>
-                  <span class="m-2"><span class="icon-clock-o mr-2"></span><span class="text-primary"><?= $loopJobDetails['type']; ?></span></span>
+                  <span class="m-2"><span class="icon-room mr-2"></span><?= $loopJobDetails['country'] . ', ' . $loopJobDetails['county']; ?></span>
+                  <span class="m-2"><span class="icon-clock-o mr-2"></span><span class="text-primary"><?= $loopJobDetails['duration']; ?></span></span>
                 </div>
               </div>
             </div>
@@ -76,7 +78,7 @@ if (isset($_GET['job_id'])) {
             <div class="mb-5">
               <figure class="mb-5"><img src="<?= $loopJobDetails['image']; ?>" alt="Free Website Template by Free-Template.co" class="img-fluid rounded"></figure>
               <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>Job Description</h3>
-              <?= $loopJobDetails['description']; ?>
+              <?= $loopJobDetails['job_description']; ?>
             </div>
             <!-- <div class="mb-5">
               <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3"></span>Responsibilities</h3>
@@ -131,12 +133,12 @@ if (isset($_GET['job_id'])) {
               <ul class="list-unstyled pl-3 mb-0">
                 <li class="mb-2"><strong class="text-black">Published on:</strong> <?= pretty_date($loopJobDetails['date_created']); ?></li>
                 <!-- <li class="mb-2"><strong class="text-black">Vacancy:</strong> 20</li> -->
-                <li class="mb-2"><strong class="text-black">Employment Status:</strong> <?= $loopJobDetails['type']; ?></li>
-                <li class="mb-2"><strong class="text-black">Experience:</strong> <?= $loopJobDetails['experience']; ?> year(s)</li>
-                <li class="mb-2"><strong class="text-black">Job Location:</strong> <?= $loopJobDetails['location']; ?></li>
+                <li class="mb-2"><strong class="text-black">Employment Status:</strong> <?= $loopJobDetails['duration']; ?></li>
+                <!-- <li class="mb-2"><strong class="text-black">Experience:</strong> <?= $loopJobDetails['experience']; ?> year(s)</li> -->
+                <li class="mb-2"><strong class="text-black">Job Location:</strong> <?= $loopJobDetails['country'] . ', ' . $loopJobDetails['county']; ?></li>
                 <li class="mb-2"><strong class="text-black">Salary:</strong> <?= money($loopJobDetails['salary']); ?></li>
-                <li class="mb-2"><strong class="text-black">Gender:</strong> Any</li>
-                <li class="mb-2"><strong class="text-black">Application Deadline:</strong> <?= dmY($loopJobDetails['deadline']); ?></li>
+                <li class="mb-2"><strong class="text-black">Gender:</strong> <?= ucfirst($loopJobDetails['gender']); ?></li>
+                <!-- <li class="mb-2"><strong class="text-black">Application Deadline:</strong> <?= dmY($loopJobDetails['deadline']); ?></li> -->
               </ul>
             </div>
 

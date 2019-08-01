@@ -10,11 +10,16 @@ if (isset($_GET['search'])) {
                                       `location` LIKE '%$location%' AND
                                       `type` LIKE '%$type%' ";
 } else {
-  $query = "SELECT * FROM jobs";
+  $query = "SELECT * 
+              FROM  freelancer INNER JOIN business_profile
+              ON  freelancer.freelancer_id =  business_profile.freelancer_id";
 }
 
 
 $queryJobs = $db->query($query);
+echo '<pre>';
+var_dump($queryJobs);
+echo '</pre>';
 ?>
 
 <body id="top">
@@ -68,18 +73,18 @@ $queryJobs = $db->query($query);
           <?php while ($jobs = mysqli_fetch_assoc($queryJobs)) : ?>
             <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
               <div class="col-md-2">
-                <a href="job-single.php?job_id=<?= $jobs['id']; ?>"><img src="<?= $jobs['image'] ?>" alt="Image" class="img-fluid"></a>
+                <a href="job-single.php?job_id=<?= $jobs['freelancer_id']; ?>"><img src="images/jobs/<?= $jobs['image'] ?>" alt="Image" class="img-fluid"></a>
               </div>
               <div class="col-md-4">
-                <span class="badge badge-primary px-2 py-1 mb-3"><?= $jobs['type'];  ?></span>
-                <h2><a href="job-single.php?job_id=<?= $jobs['id']; ?>"><?= $jobs['title'] ?></a> </h2>
-                <p class="meta">Publisher: <strong><?= $jobs['publisher'] ?>
+                <span class="badge badge-primary px-2 py-1 mb-3"><?= $jobs['duration'];  ?></span>
+                <h2><a href="job-single.php?job_id=<?= $jobs['freelancer_id']; ?>"><?= $jobs['job_category'] ?></a> </h2>
+                <p class="meta"> <strong>
                   </strong> <strong></strong>
                 </p>
               </div>
               <div class="col-md-3 text-left">
-                <h3>Nairobi</h3>
-                <span class="meta">Kenya</span>
+                <h3><?= $jobs['county'] ?></h3>
+                <span class="meta"><?= $jobs['country'] ?></span>
               </div>
               <div class="col-md-3 text-md-right">
                 <strong class="text-black"> <?= money($jobs['salary']); ?></strong>
