@@ -4,11 +4,28 @@ include_once 'inc/functions.php';
 include_once 'inc/sessions.php';
 
 if (isset($_POST['business'])) {
+  $freelancer_id = $_SESSION['freelancer_id'];
   $job_category = $_POST['job_category'];
   $job_description = $_POST['job_description'];
   $duration = $_POST['type'];
   $salary = $_POST['salary'];
+
+  if (empty($freelancer_id) || empty($job_category) || empty($job_description) || empty($duration) || empty($salary)) {
+    $errors[] = 'All fields are required';
+  }
+  if (empty($errors)) {
+    $insertBusiness = $db->query("INSERT INTO business_profile(`freelancer_id`,`job_category`,`job_description`,`duration`,`salary`) 
+      VALUES('$freelancer_id','$job_category','$job_description','$duration','$salary') ");
+    if ($insertBusiness) {
+      $_SESSION['successMessage'] = 'Profile created successfully!';
+      unset($_SESSION['freelancer_id']);
+      echo '<script>alert("success")</script>';
+    } else {
+      echo mysqli_error($insertBusiness);
+    }
+  }
 }
+
 
 ?>
 
@@ -28,6 +45,7 @@ if (isset($_POST['business'])) {
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/mine.css">
+
 </head>
 
 <body id="top">
@@ -149,7 +167,6 @@ if (isset($_POST['business'])) {
               </form>
             </div>
           </div>
-
         </div>
       </div>
   </div>

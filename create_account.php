@@ -21,9 +21,13 @@ if (isset($_POST['register'])) {
   }
 
   if (empty($errors)) {
-    $insert = $db->query("INSERT INTO freelancer (`first`,`last`,`phone`,`id_number`,`country`,`county`,`city`,`image`,`gender`) VALUES( '$first_name','$last_name','$phone','$id_number','$country','$county','$city','$image','$gender' ) ");
+    $freelancer_id = rand(0, 100000);
+    $_SESSION["freelancer_id"] = $freelancer_id;
+
+
+    $insert = $db->query("INSERT INTO freelancer (`freelancer_id`,`first`,`last`,`phone`,`id_number`,`country`,`county`,`city`,`image`,`gender`) VALUES( '$freelancer_id', '$first_name','$last_name','$phone','$id_number','$country','$county','$city','$image','$gender' ) ");
     if ($insert) {
-      $_SESSION['successMessage'] = 'Your details have been captured successfully! Please enter your business pariculars.';
+      $_SESSION['successMessage'] = 'Your details have been captured successfully! Please enter your business particulars.';
       redirect_to('business.php');
     }
   }
