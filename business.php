@@ -1,6 +1,14 @@
 <?php
+include_once 'inc/db.php';
+include_once 'inc/functions.php';
+include_once 'inc/sessions.php';
 
-if (isset($_POST['business'])) { }
+if (isset($_POST['business'])) {
+  $job_category = $_POST['job_category'];
+  $job_description = $_POST['job_description'];
+  $duration = $_POST['type'];
+  $salary = $_POST['salary'];
+}
 
 ?>
 
@@ -104,7 +112,7 @@ if (isset($_POST['business'])) { }
                 <div class="form-row">
                   <div class="form-group col-md-11">
                     <label for="inputEmail4">Job Category</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="job_category">
+                    <select class="form-control" id="exampleFormControlSelect1" name="job_category" required>
                       <option value="Mechanic">Mechanic</option>
                       <option value="Floor Repir">Floor Repir</option>
                       <option value="Painter">Painter</option>
@@ -123,21 +131,21 @@ if (isset($_POST['business'])) { }
 
                   <div class="form-group col-md-7">
                     <label for="inputAddress">Duration</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="type">
-                      <option>Choose...</option>
-                      <option>Full-Time</option>
-                      <option>Part-Time</option>
-                      <option>Free-Lancer</option>
+                    <select class="form-control" id="exampleFormControlSelect1" name="type" required>
+                      <option value="">Choose...</option>
+                      <option value="Full-Time">Full-Time</option>
+                      <option value="Part-Time">Part-Time</option>
+                      <option value="Free-Lancer">Free-Lancer</option>
 
                     </select>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputPassword4">Salary (Kshs) per month</label>
-                    <input type="number" class="form-control" id="inputPassword4" placeholder="xxxx" name="salary">
+                    <input type="number" class="form-control" id="inputPassword4" placeholder="xxxx" name="salary" required>
                   </div>
                 </div>
                 <br><br>
-                <button type="submit" class="btn btn-primary btn-mine">Submit</button>
+                <button type="submit" name="business" class="btn btn-primary btn-mine">Submit</button>
               </form>
             </div>
           </div>
