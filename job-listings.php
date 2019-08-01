@@ -6,9 +6,10 @@ if (isset($_GET['search'])) {
   $title = $_GET['title'];
   $location = $_GET['location'];
   $type = $_GET['type'];
-  $query = "SELECT * FROM jobs  WHERE title LIKE '%$title%' AND 
-                                      `location` LIKE '%$location%' AND
-                                      `type` LIKE '%$type%' ";
+  $query = "SELECT * 
+              FROM  freelancer JOIN business_profile
+              on business_profile.job_category LIKE '%$title%' AND 
+                                      business_profile.duration LIKE '%$type%' ";
 } else {
   $query = "SELECT * 
               FROM  freelancer INNER JOIN business_profile
@@ -17,9 +18,6 @@ if (isset($_GET['search'])) {
 
 
 $queryJobs = $db->query($query);
-echo '<pre>';
-var_dump($queryJobs);
-echo '</pre>';
 ?>
 
 <body id="top">
@@ -64,16 +62,20 @@ echo '</pre>';
 
         <div class="row mb-5 justify-content-center">
           <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2">109,234 Job Listed</h2>
+            <h2 class="section-title mb-2"><?php if (mysqli_num_rows($queryJobs) < 1) : ?>
+                <p>Sorry. No results to Display</p>
+              <?php endif; ?></h2>
           </div>
         </div>
 
 
         <div class="mb-5">
           <?php while ($jobs = mysqli_fetch_assoc($queryJobs)) : ?>
+
             <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
+
               <div class="col-md-2">
-                <a href="job-single.php?job_id=<?= $jobs['freelancer_id']; ?>"><img src="images/jobs/<?= $jobs['image'] ?>" alt="Image" class="img-fluid"></a>
+                <a href="job-single.php?job_id=<?= $jobs['freelancer_id']; ?>"><img src="images/freelancers/<?= $jobs['image'] ?>" alt="Image" class="img-fluid"></a>
               </div>
               <div class="col-md-4">
                 <span class="badge badge-primary px-2 py-1 mb-3"><?= $jobs['duration'];  ?></span>
@@ -91,118 +93,10 @@ echo '</pre>';
               </div>
             </div>
           <?php endwhile; ?>
-
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.html"><img src="images/garden1.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-warning px-2 py-1 mb-3">Full-time</span>
-              <h2><a href="job-single.html">Gardener</a> </h2>
-              <p class="meta">Publisher: <strong>John Kamau</strong> Tag: <strong>farmers</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>Westlands</h3>
-              <span class="meta">Kenya</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">Ksh 5,000 &mdash; Ksh 10,000</strong>
-            </div>
-          </div>
-
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.html"><img src="images/man.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-success px-2 py-1 mb-3">Part-time</span>
-              <h2><a href="job-single.html">Painting</a> </h2>
-              <p class="meta">Publisher: <strong>Anthony Baru</strong> Tag: <strong>Designer</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>Thika</h3>
-              <span class="meta">Kenya</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">Ksh 2,000 &mdash; Ksh 2,500</strong>
-            </div>
-          </div>
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.html"><img src="images/pest.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-primary px-2 py-1 mb-3">Freelancer</span>
-              <h2><a href="job-single.html">Pest Control</a> </h2>
-              <p class="meta">Publisher: <strong>Elijah Omondi</strong> Tag: <strong>Farming</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>Kisumu</h3>
-              <span class="meta">Kenya</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">kSH 1,200 &mdash; ksh 1,6000</strong>
-            </div>
-          </div>
-
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.html"><img src="images/featured-listing-5.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-success px-2 py-1 mb-3">Full-time</span>
-              <h2><a href="job-single.html">Floor Repair</a> </h2>
-              <p class="meta">Publisher: <strong> Gilbert Njoronge </strong> Tag: <strong>Mansory</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>Nairobi</h3>
-              <span class="meta">Kenya</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">Ksh 3,000 &mdash; Ksh 3,5000</strong>
-            </div>
-          </div>
-
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.html"><img src="images/floor.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-success px-2 py-1 mb-3">Full-time</span>
-              <h2><a href="job-single.html">House Girl</a> </h2>
-              <p class="meta">Publisher: <strong>Jane Wambui</strong> Tag: <strong>casual worker</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>Kiambu</h3>
-              <span class="meta">Kenya</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">Ksh 5,000 &mdash; Ksh 6,000</strong>
-            </div>
-          </div>
-
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.html"><img src="images/sofa.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-success px-2 py-1 mb-3">Part-time</span>
-              <h2><a href="job-single.html">Sofaset Repair</a> </h2>
-              <p class="meta">Publisher: <strong>Geofrey Mwangi</strong> Tag: <strong>Carpenter</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>Nairobi</h3>
-              <span class="meta">Kenya</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">Ksh 10,000 &mdash;Ksh 15,000</strong>
-            </div>
-          </div>
-
         </div>
 
         <div class="row pagination-wrap">
-
+          <!-- 
           <div class="col-md-6 text-center text-md-left">
             <div class="custom-pagination ml-auto">
               <a href="#" class="prev">Previous</a>
@@ -214,7 +108,7 @@ echo '</pre>';
               </div>
               <a href="#" class="next">Next</a>
             </div>
-          </div>
+          </div> -->
         </div>
 
       </div>

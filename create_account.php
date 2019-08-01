@@ -12,8 +12,12 @@ if (isset($_POST['register'])) {
   $country = $_POST['country'];
   $county = $_POST['county'];
   $city = $_POST['city'];
-  $image = $_POST['image'];
   $gender = $_POST['gender'];
+
+  $image = '';
+  if ($_FILES['image']['name'] != '') {
+    $image = upload_image();
+  }
 
 
   if (empty($first_name) || empty($last_name) || empty($phone) || empty($country) || empty($county) || empty($city) || empty($image) || empty($gender)) {
@@ -25,7 +29,8 @@ if (isset($_POST['register'])) {
     $_SESSION["freelancer_id"] = $freelancer_id;
 
 
-    $insert = $db->query("INSERT INTO freelancer (`freelancer_id`,`first`,`last`,`phone`,`id_number`,`country`,`county`,`city`,`image`,`gender`) VALUES( '$freelancer_id', '$first_name','$last_name','$phone','$id_number','$country','$county','$city','$image','$gender' ) ");
+    $insert = $db->query("INSERT INTO freelancer (`freelancer_id`,`first`,`last`,`phone`,`id_number`,`country`,`county`,`city`,`image`,`gender`) 
+                        VALUES( '$freelancer_id','$first_name','$last_name','$phone','$id_number','$country','$county','$city','$image','$gender' ) ");
     if ($insert) {
       $_SESSION['successMessage'] = 'Your details have been captured successfully! Please enter your business particulars.';
       redirect_to('business.php');
@@ -78,12 +83,15 @@ if (isset($_POST['register'])) {
           <div class="col-lg-6 ml-auto">
             <h2 class="section-title mb-3">CREATE AN ACCOUNT</h2><br>
             <?php
+            echo errorMessage();
+            echo successMessage();
             if (!empty($errors)) {
               echo display_errors($errors);
             }
             ?>
+
             <div class=" row form">
-              <form method="POST" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+              <form method="POST" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">First name</label>
@@ -130,7 +138,7 @@ if (isset($_POST['register'])) {
                   </div>
                 </div>
                 <br>
-                <button type="submit" name="register" class="btn btn-primary btn-mine">Sign in</button>
+                <button type="submit" name="register" class="btn btn-primary btn-mine">Register</button>
               </form>
             </div>
           </div>

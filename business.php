@@ -3,6 +3,11 @@ include_once 'inc/db.php';
 include_once 'inc/functions.php';
 include_once 'inc/sessions.php';
 
+if (!isset($_SESSION['freelancer_id'])) {
+  $_SESSION['errorMessage'] =  'Please Register.';
+  redirect_to('create_account.php');
+}
+
 if (isset($_POST['business'])) {
   $freelancer_id = $_SESSION['freelancer_id'];
   $job_category = $_POST['job_category'];
@@ -66,26 +71,7 @@ if (isset($_POST['business'])) {
     <!-- NAVBAR -->
     <header class="site-navbar mt-3">
       <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.html">Reliable portal</a></div>
-
-          <nav class="mx-auto site-navigation">
-            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="index.html" class="nav-link active">Home</a></li>
-              <li><a href="job-listings.html">Hire Someone</a></li>
-              <li><a href="create_account.html">Create Account</a></li>
-              <li class="d-lg-none"><a href="contact.html">Contact Us</a></li>
-            </ul>
-          </nav>
-
-          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-            <div class="ml-auto">
-              <a href="contact.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-paper-plane"></span>Contact Us</a>
-            </div>
-            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
-          </div>
-
-        </div>
+        <?php include 'inc/nav.php'; ?>
       </div>
     </header>
 

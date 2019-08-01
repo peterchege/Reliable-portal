@@ -1,4 +1,16 @@
 <?php
+//upload image
+function upload_image()
+{
+    $extension = explode('.', $_FILES['image']['name']);
+    $new_name = rand() . '.' . end($extension);
+    $destination = 'images/freelancers/' . $new_name;
+    move_uploaded_file($_FILES['image']['tmp_name'], $destination);
+    return $new_name;
+}
+
+
+
 //confirm login in hr management system
 function confirm_login()
 {
@@ -12,6 +24,8 @@ function confirm_login()
         exit();
     }
 }
+
+
 
 // displaying errors
 function display_errors($errors)

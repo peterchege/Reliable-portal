@@ -76,7 +76,7 @@ if (isset($_GET['job_id'])) {
         <div class="row">
           <div class="col-lg-8">
             <div class="mb-5">
-              <figure class="mb-5"><img src="<?= $loopJobDetails['image']; ?>" alt="Free Website Template by Free-Template.co" class="img-fluid rounded"></figure>
+              <figure class="mb-5"><img src="images/freelancers/<?= $loopJobDetails['image']; ?>" alt="Free Website Template by Free-Template.co" class="img-fluid rounded"></figure>
               <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>Job Description</h3>
               <?= $loopJobDetails['job_description']; ?>
             </div>

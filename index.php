@@ -55,7 +55,7 @@ include 'inc/head.php';
                     <option value="">Please choose</option>
                     <option value="Part Time">Part Time</option>
                     <option value="Full Time">Full Time</option>
-                    <option value="Freelancer">Freelancer</option>
+                    <option value="Free-lancer">Free-lancer</option>
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
