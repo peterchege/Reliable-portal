@@ -114,16 +114,6 @@ include 'inc/head.php';
       </div>
     </section>
 
-
-
-    <!-- <section class="site-section">
-      <div class="container">
-      </div>
-    </section> -->
-
-
-
-
     <section class="site-section py-4 mb-5 border-top">
       <div class="container">
 
