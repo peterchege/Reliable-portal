@@ -116,10 +116,10 @@ include 'inc/head.php';
 
 
 
-    <section class="site-section">
+    <!-- <section class="site-section">
       <div class="container">
       </div>
-    </section>
+    </section> -->
 
 
 
@@ -163,10 +163,12 @@ include 'inc/head.php';
             <div class="col-lg-6 mx-auto">
               <img class="img-fluid mx-auto" src="images/peterchege.png" alt="Image">
               <blockquote>
-                <p>&ldquo;Soluta quasi cum delectus eum facilis recusandae nesciunt molestias accusantium libero dolores
-                  repellat id in dolorem laborum ad modi qui at quas dolorum voluptatem voluptatum repudiandae.&rdquo;
+                <p>&ldquo;I was amazed by the professional and the variety of services they offer and was very
+                  satisfied by the work they done and the attractive prices. Thank u for making everything so much
+                  easier!
+                  &rdquo;
                 </p>
-                <p><cite> &mdash; Richard Anderson</cite></p>
+                <p><cite> &mdash; Alex Kimani</cite></p>
               </blockquote>
             </div>
           </div>
@@ -177,10 +179,13 @@ include 'inc/head.php';
             <div class="col-lg-6 mx-auto">
               <img class="img-fluid mx-auto" src="images/peterchege.png" alt="Image">
               <blockquote>
-                <p>&ldquo;Soluta quasi cum delectus eum facilis recusandae nesciunt molestias accusantium libero dolores
-                  repellat id in dolorem laborum ad modi qui at quas dolorum voluptatem voluptatum repudiandae.&rdquo;
+                <p>&ldquo;Reliable and Quality services delivered at your doorstep by expert professionals from Reliable portal.
+                  Reliable portal aims at providing consistent job opportunities & income to the blue collar professionals in Kenya
+                  while solving the myriad of customer demands and everyday problems super efficiently. Need a housekeeper
+                  or a plumber? Need to get your dream furniture made or a relaxing massage at the end of a hectic day. We
+                  at Reliable portal have got you covered. Whatever you need. Done!'&rdquo;
                 </p>
-                <p><cite> &mdash; Chris Peters</cite></p>
+                <p><cite> &mdash; Maryanne Mungai </cite></p>
               </blockquote>
             </div>
           </div>
@@ -195,8 +200,7 @@ include 'inc/head.php';
         <div class="row align-items-center">
           <div class="col-md-8">
             <h2 class="text-white">Looking For A Job? Create an account with us today</h2>
-            <p class="mb-0 text-white lead">Lorem ipsum dolor sit amet consectetur adipisicing elit tempora adipisci
-              impedit.</p>
+
           </div>
           <div class="col-md-3 ml-auto">
             <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>
