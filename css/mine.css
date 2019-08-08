@@ -3,3 +3,338 @@
     border-radius: 20px; 
     padding: 10px 0;
 }
+
+@font-face {
+    src: url(../font/trebuchetms.ttf);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    src: url(../font/trebuc.ttf);
+    font-family: trebuchet;
+    src: url(../font/trebuchetms.ttf);
+    font-family: trebuchet;
+    src: url(../font/trebuchetms.ttf);
+    font-family: trebuchet;
+    src: url(../font/trebuchetms.ttf);
+    font-family: trebuchet;
+}
+
+
+.bg-gradient-primary1 {
+    background-color: #0D345F;
+    color: #fff;
+}
+
+.headline h2 {
+    font-family: 'Trebuchet MS',
+        'Lucida Sans Unicode',
+        'Lucida Grande',
+        'Lucida Sans',
+        Arial,
+        sans-serif;
+    color: #0D345F;
+}
+
+.wrapper {
+    width: 85%;
+}
+
+.box-card {
+    margin-top: 1%;
+
+}
+
+.box-card a {
+    text-decoration-line: none;
+}
+
+.box-cl {
+    -webkit-box-shadow: 0px 3px 9px 0px rgba(118, 122, 125, 1);
+    -moz-box-shadow: 0px 3px 9px 0px rgba(118, 122, 125, 1);
+    box-shadow: 0px 3px 9px 0px rgba(118, 122, 125, 1);
+}
+
+.box-cl:hover {
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(171, 6, 6, 1);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(171, 6, 6, 1);
+    box-shadow: 0px 0px 4px 0px rgba(171, 6, 6, 1);
+    transition: ease-in 100ms;
+}
+
+.illustrat-icon {
+    /* height: 240px; */
+}
+
+.illustrat-icon img {
+    width: 100%;
+    height: 150px;
+
+}
+
+.illustrat-icon h5 {
+    padding-top: 20px;
+    font-family: 'Oswald',
+        sans-serif;
+    color: #0C4DA2;
+}
+
+.illustrat-icon p {
+    color: #0D345F;
+    font-family: 'Trebuchet MS',
+        'Lucida Sans Unicode',
+        'Lucida Grande',
+        'Lucida Sans',
+        Arial,
+        sans-serif;
+    font-size: 16px;
+}
+
+.illustrat-icon:hover {
+    color: crimson;
+}
+
+/* CREATE POST */
+
+.center-box {
+    margin-left: 10%;
+}
+
+.box-container {
+    width: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+.box-container h2 {
+    padding-top: 5%;
+    font-family: 'Oswald',
+        sans-serif;
+    color: #0C4DA2;
+    text-align: center;
+}
+
+.box-container form {
+    width: 80%;
+    margin: 5% auto;
+    font-family: 'Trebuchet MS',
+        'Lucida Sans Unicode',
+        'Lucida Grande',
+        'Lucida Sans',
+        Arial,
+        sans-serif;
+}
+
+.box-container form input {
+    height: 45px;
+}
+
+form .form-group select {
+    height: 45px;
+}
+
+form .form-group label {
+    color: #0C4DA2;
+    padding-left: 5px;
+}
+
+form .form-group {
+    margin-top: 20px;
+}
+
+form .check {
+    margin-top: 14%;
+}
+
+form .check2 {
+    margin-top: -10%;
+    margin-left: 10%;
+}
+
+form .form-check-label {
+    padding-top: 5%;
+}
+
+form .submit {
+    margin-top: 5%;
+}
+
+.btn-post .btn {
+    width: 200px;
+    border-radius: 20px;
+    -webkit-box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.3);
+    background-color: #0C4DA2;
+    padding: 7px 0;
+}
+
+/* VIEW APPLICATION */
+
+.live h2 {
+    padding: 1% 0 4% 0;
+    font-family: 'Oswald',
+        sans-serif;
+    color: #0C4DA2;
+    font-weight: 600;
+}
+
+.box-ap {
+    -webkit-box-shadow: 0px 3px 9px 0px rgba(118, 122, 125, 1);
+    -moz-box-shadow: 0px 3px 9px 0px rgba(118, 122, 125, 1);
+    box-shadow: 0px 3px 9px 0px rgba(118, 122, 125, 1);
+}
+
+.box-ap h5 {
+    font-size: 26px;
+}
+
+.box-ap ul li {
+    font-size: 14px;
+    color: #5f6368;
+    padding-top: 10px;
+}
+
+.btn-sub {
+    margin: 10% auto 5% auto;
+    width: 95%;
+}
+
+.btn-sub .btn {
+    width: 90%;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 20px;
+    -webkit-box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.btn-sub .btn-primary {
+    background-color: #0C4DA2;
+    border: 1px solid #0C4DA2;
+}
+
+.btn-post .bg-gradient-success {
+    border: 0px;
+}
+
+.btn-sub .btn-primary:hover {
+    background-color: rgb(5, 89, 199);
+    border: 1px solid rgb(5, 89, 199);
+}
+
+.btn-sub .btn-danger {
+    background-color: rgb(189, 7, 7);
+    border: 1px solid rgb(189, 7, 7);
+}
+
+.bg-gradient-info {
+    color: #fff;
+    border: 0px;
+}
+
+/* TABLE */
+
+.t-body tr th {
+    font-family: 'Oswald',
+        sans-serif;
+    letter-spacing: 0.06em;
+    color: #0C4DA2;
+    font-weight: 550;
+}
+
+tfoot tr th {
+    font-family: 'Oswald',
+        sans-serif;
+    letter-spacing: 0.06em;
+    color: #0C4DA2;
+    font-weight: 550;
+}
+
+
+/* APPLICANT DETAILS */
+.pos-box {
+    margin-top: 15%;
+}
+
+.img-header {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.img-header img {
+    height: 200px;
+    border-radius: 50%;
+    margin: -10% auto 0 auto;
+}
+
+.align-detail {
+    margin: 0 auto;
+    color: #0C4DA2;
+    font-size: 14px;
+}
+
+.align-detail p1 {
+    font-size: 18px;
+    font-family: 'Oswald',
+        sans-serif;
+    font-weight: 600;
+}
+
+/* JOB PAGE */
+.job-box {
+    margin: 1.5% auto;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+.job-description {
+    padding: 10px 10px 0 10px;
+    font-family: 'Trebuchet MS',
+        'Lucida Sans Unicode',
+        'Lucida Grande',
+        'Lucida Sans',
+        Arial,
+        sans-serif;
+    color: #0D345F;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.job-description h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #0C4DA2;
+    font-size: 28px;
+    padding: 10px 0 0px 0;
+}
+
+.job-description h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #0C4DA2;
+    font-size: 22px;
+    padding: 0px 0 15px 0;
+}
+
+.job-description ul li span {
+    color: darkgray;
+    padding-left: 10px;
+}
+
+.job-content p {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.btn-career {
+    margin-top: 20%;
+}
+
+/* ckeditor custom style */
+.ck-editor__editable_inline {
+    min-height: 500px;
+    max-height: 800px;
+}
