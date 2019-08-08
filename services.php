@@ -31,38 +31,11 @@
 
 
     <!-- NAVBAR -->
-    <header class="site-navbar mt-3">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.html">Careers</a></div>
+    <?php include 'inc/nav.php'; ?>
 
-          <nav class="mx-auto site-navigation">
-            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="index.html" class="nav-link">Home</a></li>
-              <li><a href="job-listings.html">Job Listings</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html" class="active">Services</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li class="d-lg-none"><a href="contact.html">Contact Us</a></li>
-            </ul>
-          </nav>
-
-          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-            <div class="ml-auto">
-              <a href="contact.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span
-                  class="mr-2 icon-paper-plane"></span>Contact Us</a>
-            </div>
-            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
-                class="icon-menu h3 m-0 p-0 mt-2"></span></a>
-          </div>
-
-        </div>
-      </div>
-    </header>
 
     <!-- HOME -->
-    <section class="home-section section-hero inner-page overlay bg-image"
-      style="background-image: url('images/hero_1.jpg');" id="home-section">
+    <section class="home-section section-hero inner-page overlay bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-12">
@@ -76,75 +49,75 @@
     </section>
 
 
-<section class="site-section services-section bg-light block__62849" id="next-section">
-  <div class="container">
+    <section class="site-section services-section bg-light block__62849" id="next-section">
+      <div class="container">
 
-    <div class="row">
-      <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+        <div class="row">
+          <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
 
-        <a href="service-single.html" class="block__16443 text-center d-block">
-          <span class="custom-icon mx-auto"><span class="icon-magnet d-block"></span></span>
-          <h3>Design Strategy</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam
-            assumenda.</p>
-        </a>
+            <a href="service-single.html" class="block__16443 text-center d-block">
+              <span class="custom-icon mx-auto"><span class="icon-magnet d-block"></span></span>
+              <h3>Design Strategy</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam
+                assumenda.</p>
+            </a>
+
+          </div>
+          <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+
+            <a href="service-single.html" class="block__16443 text-center d-block">
+              <span class="custom-icon mx-auto"><span class="icon-plane d-block"></span></span>
+              <h3>Marketing Strategy</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam
+                assumenda.</p>
+            </a>
+
+          </div>
+          <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+
+            <a href="service-single.html" class="block__16443 text-center d-block">
+              <span class="custom-icon mx-auto"><span class="icon-laptop d-block"></span></span>
+              <h3>Web Design</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam
+                assumenda.</p>
+            </a>
+
+          </div>
+          <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+
+            <a href="service-single.html" class="block__16443 text-center d-block">
+              <span class="custom-icon mx-auto"><span class="icon-search d-block"></span></span>
+              <h3>Search Engine Results</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam
+                assumenda.</p>
+            </a>
+
+          </div>
+          <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+
+            <a href="service-single.html" class="block__16443 text-center d-block">
+              <span class="custom-icon mx-auto"><span class="icon-paper-plane d-block"></span></span>
+              <h3>Market Leading </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam
+                assumenda.</p>
+            </a>
+
+          </div>
+          <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+
+            <a href="service-single.html" class="block__16443 text-center d-block">
+              <span class="custom-icon mx-auto"><span class="icon-plug d-block"></span></span>
+              <h3>Pixel Perfect Design</h3>
+              <p class="d-sm-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum
+                labore aperiam assumenda.</p>
+            </a>
+
+          </div>
+        </div>
+
 
       </div>
-      <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
-
-        <a href="service-single.html" class="block__16443 text-center d-block">
-          <span class="custom-icon mx-auto"><span class="icon-plane d-block"></span></span>
-          <h3>Marketing Strategy</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam
-            assumenda.</p>
-        </a>
-
-      </div>
-      <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
-
-        <a href="service-single.html" class="block__16443 text-center d-block">
-          <span class="custom-icon mx-auto"><span class="icon-laptop d-block"></span></span>
-          <h3>Web Design</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam
-            assumenda.</p>
-        </a>
-
-      </div>
-      <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
-
-        <a href="service-single.html" class="block__16443 text-center d-block">
-          <span class="custom-icon mx-auto"><span class="icon-search d-block"></span></span>
-          <h3>Search Engine Results</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam
-            assumenda.</p>
-        </a>
-
-      </div>
-      <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
-
-        <a href="service-single.html" class="block__16443 text-center d-block">
-          <span class="custom-icon mx-auto"><span class="icon-paper-plane d-block"></span></span>
-          <h3>Market Leading </h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam
-            assumenda.</p>
-        </a>
-
-      </div>
-      <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
-
-        <a href="service-single.html" class="block__16443 text-center d-block">
-          <span class="custom-icon mx-auto"><span class="icon-plug d-block"></span></span>
-          <h3>Pixel Perfect Design</h3>
-          <p class="d-sm-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum
-            labore aperiam assumenda.</p>
-        </a>
-
-      </div>
-    </div>
-
-
-  </div>
-</section>
+    </section>
 
 
     <footer class="site-footer">
@@ -196,9 +169,10 @@
             <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-              with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                target="_blank">Colorlib</a>
+              <script>
+                document.write(new Date().getFullYear());
+              </script> All rights reserved | This template is made
+              with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
