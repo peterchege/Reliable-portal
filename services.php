@@ -146,55 +146,6 @@
   </div>
 </section>
 
-<section class="bg-white pt-5 testimony-full">
-
-  <div class="owl-carousel single-carousel">
-
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mx-auto">
-          <img class="img-fluid mx-auto" src="images/person_1.jpg" alt="Image">
-          <blockquote>
-            <p>&ldquo;Soluta quasi cum delectus eum facilis recusandae nesciunt molestias accusantium libero dolores
-              repellat id in dolorem laborum ad modi qui at quas dolorum voluptatem voluptatum repudiandae.&rdquo;</p>
-            <p><cite> &mdash; Richard Anderson</cite></p>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mx-auto">
-          <img class="img-fluid mx-auto" src="images/person_2.jpg" alt="Image">
-          <blockquote>
-            <p>&ldquo;Soluta quasi cum delectus eum facilis recusandae nesciunt molestias accusantium libero dolores
-              repellat id in dolorem laborum ad modi qui at quas dolorum voluptatem voluptatum repudiandae.&rdquo;</p>
-            <p><cite> &mdash; Chris Peters</cite></p>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-8">
-        <h2 class="text-white">Looking For A Job?</h2>
-        <p class="mb-0 text-white lead">Lorem ipsum dolor sit amet consectetur adipisicing elit tempora adipisci
-          impedit.</p>
-      </div>
-      <div class="col-md-3 ml-auto">
-        <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>
-      </div>
-    </div>
-  </div>
-</section>
 
     <footer class="site-footer">
 

@@ -5,9 +5,11 @@
 
             <nav class="mx-auto site-navigation">
                 <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-                    <li><a href="index.php" class="nav-link">Home</a></li>
-                    <li><a href="job-listings.php">Hire Someone</a></li>
-                    <li><a href="create_account.php">Create Account</a></li>
+                    <li><a href="index.php" class="nav-link">HOME</a></li>
+                    <li><a href="job-listings.php">HIRE SOMEONE</a></li>
+                    <li><a href="create_account.php">CREATE ACCOUNT</a></li>
+                    <li><a href="login.php">LOGIN</a></li>
+                    <li><a href="services.php">ABOUT US</a></li>
                     <!-- <li><a href="services.php">Login </a></li> -->
                     <!-- <li class="d-lg-none"><a href="contact.php">Contact Us</a></li> -->
                 </ul>
