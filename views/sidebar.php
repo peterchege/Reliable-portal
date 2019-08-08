@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <!-- <i class="fas fa-laugh-wink"></i> -->
         </div>
-        <div class="sidebar-brand-text mx-3">APA INSURANCE</div>
+        <div class="sidebar-brand-text mx-3">Reliable Portal</div>
     </a>
 
     <!-- Divider -->
@@ -23,69 +23,27 @@
 
     <!-- Heading -->
 
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <li
-        class="nav-item <?= (($page == 'create_post.php' || $page == 'live_post.php' || $page == 'archive_post.php') ? 'active' : '') ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Job Post</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
-                <a class="collapse-item" href="create_post.php">Create Job Post</a>
-                <a class="collapse-item" href="live_post.php">Live job Posts</a>
-                <a class="collapse-item" href="archive_post.php">Archived Job Posts</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li
-        class="nav-item <?= (($page == 'approved_candidate_post.php' || $page == 'applicant_database.php') ? 'active' : '') ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-            aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Applicants</span>
-        </a>
-        <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-                <a class="collapse-item" href="approved_candidate_post.php">Approved Candidates</a>
-                <a class="collapse-item" href="applicant_database.php">Applicant Database </a>
-            </div>
-        </div>
-    </li>
-
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item <?= (($page == 'user_database.php' || $page == 'create_user.php') ? 'active' : '') ?>">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
             aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Account</span>
+            <span>My Profile</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-                <a class="collapse-item" href="create_user.php">Create User</a>
-                <a class="collapse-item" href="user_database.php">View Users</a>
-            </div>
-        </div>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item <?= (($page == '') ? 'active' : '') ?>">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
-            <span>Live Chat</span></a>
+            <span>Business account</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item <?= (($page == '') ? 'active' : '') ?>">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
-            <span>Emails</span></a>
+            <span>Billing Account</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
