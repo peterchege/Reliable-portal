@@ -102,6 +102,11 @@ if (isset($_POST['register'])) {
                     <input name="last_name" type="text" class="form-control" id="inputEmail4" placeholder="doe">
                   </div>
                   <br>
+                  <div class="form-group col-md-12">
+                    <label for="inputEmail4">Email</label>
+                    <input name="email" type="text" class="form-control" id="inputEmail4" placeholder="doe@gmail.com">
+                  </div>
+                  <br>
                   <div class="form-group col-md-6">
                     <label for="inputAddress">Phone number</label>
                     <input name="phone_number" type="number" class="form-control" id="inputAddress" placeholder="07xx 924 xxx">
